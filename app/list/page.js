@@ -5,7 +5,7 @@ import { useState } from "react";
 export default function List() {
   let products = ["Tomatoes", "Pasta", "Coconut"];
   // useState -> auto rendering reflecting its change!
-  let [stock, useStock] = useState(0);
+  let [stockList, useStockList] = useState([0, 0, 0]);
 
   return (
     <div>
@@ -17,18 +17,22 @@ export default function List() {
             <h4>{product} $40</h4>
             <button
               onClick={() => {
-                if (stock === 0) return;
+                let stockListCopy = [...stockList];
+                if (stockListCopy[i] === 0) return;
                 // change helper(change value)
-                useStock(stock - 1);
+                stockListCopy[i]--;
+                useStockList(stockListCopy);
               }}
             >
               -
             </button>
-            <span> {stock} </span>
+            <span> {stockList[i]} </span>
             <button
               onClick={() => {
+                let stockListCopy = [...stockList];
                 // change helper(change value)
-                useStock(stock + 1);
+                stockListCopy[i]++;
+                useStockList(stockListCopy);
               }}
             >
               +
