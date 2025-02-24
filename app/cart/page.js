@@ -8,10 +8,24 @@ export default function Cart() {
       })}
       <Banner cardName="Master" />
       <Banner cardName="AMAX" />
+<<<<<<< Updated upstream
+=======
+      <ColorButton color="red" />
+      <ColorButton color="blue" />
+>>>>>>> Stashed changes
     </div>
   );
 }
 
+<<<<<<< Updated upstream
+=======
+function ColorButton(props) {
+  return (
+    <button style={{ background: props.color }}>{props.color} button</button>
+  );
+}
+
+>>>>>>> Stashed changes
 function Banner(props) {
   return <h5>{props.cardName} card is on no interest event now!</h5>;
 }
